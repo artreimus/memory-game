@@ -1,38 +1,229 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  background-color: #2b283a;
+  padding: 1.1875rem 1.25rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  background-color: #ebebeb;
+  /* min-width: 320px; */
+  /* min-height: 320px; */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 2.06rem 2.125rem;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+}
+
+.col {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.App {
+  /* padding: 2em; */
+}
+
+header {
+  font-family: "Oswald", sans-serif;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  color: #ffcb05;
+  font-weight: 1000;
+  font-size: 1.3rem;
+  letter-spacing: 4px;
+  -webkit-text-stroke: 1.5px #2a75bb;
+  text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+.container__logo {
+  max-width: 300px;
+  margin-right: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+  max-width: 100%;
 }
+
+.container__card {
+  display: grid;
+  gap: 1.125rem;
+  grid-template: auto auto / repeat(5, 1fr);
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  justify-content: center;
+}
+
+.card__pokemon {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #2b283a;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 3.81277px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 1em;
+}
+
+.card__image {
+  width: 150px;
+  /* height: 20px; */
+}
+
+.pokemon__name {
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+/* Pokemon Types */
+
+.card__pokemon--type {
+  justify-content: center;
+}
+
+.pokemon__type {
+  margin: 10px;
+  padding: 0.25em 0.5em;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: "helvetica neue", Helvetica, Verdana, sans-serif;
+  color: #fff;
+  font-weight: 1000;
+  font-size: 1.2rem;
+  background-color: #68a090;
+  border: 3px solid #ffffff;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.7px rgb(0, 0, 0);
+}
+
+.normal {
+  background-color: #a8a878;
+}
+
+.fire {
+  background-color: #f08030;
+}
+
+.water {
+  background-color: #6890f0;
+}
+
+.electric {
+  background-color: #f8d030;
+}
+
+.grass {
+  background-color: #78c850;
+}
+
+.ice {
+  background-color: #98d8d8;
+}
+
+.ground {
+  background-color: #e0c068;
+}
+
+.flying {
+  background-color: #a890f0;
+}
+
+.ghost {
+  background-color: #705898;
+}
+
+.rock {
+  background-color: #b8a038;
+}
+
+.fighting {
+  background-color: #c03028;
+}
+
+.poison {
+  background-color: #a040a0;
+}
+
+.psychic {
+  background-color: #f85888;
+}
+
+.bug {
+  background-color: #a8b820;
+}
+
+.dark {
+  background-color: #705848;
+}
+
+.steel {
+  background-color: #b8b8d0;
+}
+
+.dragon {
+  background-color: #7038f8;
+}
+
+/* Start Button */
+/* To be changed */
+
+/* .button {
+  font-family: "Karla";
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.1875rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+}
+
+.roll__button {
+  background-color: #5035ff;
+  color: #ffffff;
+}
+
+.new__button {
+  background-color: #fdf257;
+  color: #2b283a;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+} */
