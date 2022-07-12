@@ -231,6 +231,9 @@ img {
   font-weight: 700;
 }
 
+.correct--answer > span {
+  text-transform: uppercase;
+}
 /* Pokemon Types */
 
 .card__pokemon--type {
