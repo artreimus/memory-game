@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Pokemon(props) {
   return (
-    <div className="col card card__pokemon">
+    <div className="card card__pokemon">
       <div className="card__image">
         <img
           src={require(`../images/${props.pokemon.name}.png`)}

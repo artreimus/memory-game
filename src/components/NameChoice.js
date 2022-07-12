@@ -2,7 +2,7 @@ import React from "react";
 
 export default function NameChoice(props) {
   const stylesGuessing = {
-    backgroundColor: props.choice.isSelected ? "yellow" : "",
+    backgroundColor: props.choice.isSelected ? "#93cbff" : " ",
   };
 
   const stylesChecked = {

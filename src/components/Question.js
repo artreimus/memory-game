@@ -4,8 +4,10 @@ import TypeChoice from "./TypeChoice";
 
 export default function Question(props) {
   let choicesElement;
+  let correctAnswer;
 
   if (props.questionType === "name") {
+    correctAnswer = props.question.correctAnswer[0];
     choicesElement = props.question.choices.map((choice) => (
       <NameChoice
         choice={choice}
@@ -15,6 +17,17 @@ export default function Question(props) {
       />
     ));
   } else if (props.questionType === "type") {
+    let choicesArray = props.question.choices.map((choice) => {
+      return choice.choice;
+    });
+    let resultArray = props.question.correctAnswer.filter((answer) => {
+      return choicesArray.includes(answer);
+    });
+
+    resultArray.length > 1
+      ? (correctAnswer = `${resultArray[0]} or ${resultArray[1]}`)
+      : (correctAnswer = `${resultArray[0]} `);
+
     choicesElement = props.question.choices.map((choice) => (
       <TypeChoice
         choice={choice}
@@ -36,6 +49,11 @@ export default function Question(props) {
         </div>
       </div>
       <div className="row choices">{choicesElement}</div>
+      {props.isChecked && !props.question.isCorrect && (
+        <div className="correct--answer">
+          Correct Answer: <span>{correctAnswer}</span>
+        </div>
+      )}
     </div>
   );
 }

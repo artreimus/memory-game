@@ -2,28 +2,27 @@ import React from "react";
 
 export default function Homepage(props) {
   return (
-    <div className="homepage">
-      <main>
-        <div className="row title__container">
+    <div className="page__home col page">
+      <div className="main">
+        <div className="col container__brand">
           <div className="container__logo">
             <img
               src={require(`../images/logo.png`)}
-              alt="logo"
+              alt="Pokemon logo"
               className="logo"
             />
           </div>
-          <h1>Memory Game</h1>
+          <h1 className="header__title">Memory Game</h1>
         </div>
         <div className="col">
           <h3 className="homepage__text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi,
-            distinctio.
+            Do you have what it takes to memorize them all?
           </h3>
-          <button className="button" onClick={props.handleStartClick}>
+          <button className="button" onClick={props.incrementPlayCount}>
             Start Game
           </button>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
