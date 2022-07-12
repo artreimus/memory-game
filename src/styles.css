@@ -13,6 +13,8 @@
   padding: 0;
 }
 
+/* Generic */
+
 body {
   font-family: "Karla", sans-serif;
   font-size: 16px;
@@ -20,14 +22,13 @@ body {
   padding: 1.1875rem 1.25rem;
 }
 
-main {
+.page {
+  min-height: 600px;
   background-color: #ebebeb;
-  /* min-width: 320px; */
-  /* min-height: 320px; */
   border-radius: 10px;
   display: flex;
   align-items: center;
-  padding: 2.06rem 2.125rem;
+  padding: 1.5rem 1.8rem;
   flex-direction: column;
 }
 
@@ -42,7 +43,8 @@ img {
 
 .row {
   display: flex;
-  flex-direction: row;
+  /* Will be changed through media query */
+  flex-direction: column;
 }
 
 .center__all {
@@ -50,20 +52,6 @@ img {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-}
-
-.App {
-  /* padding: 2em; */
-}
-
-/* Home page */
-
-.homepage__text {
-  font-size: 1.5rem;
-  font-weight: 600;
-  max-width: 700px;
-  text-align: center;
-  margin-bottom: 0.8em;
 }
 
 .button {
@@ -75,9 +63,20 @@ img {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   margin: 0 auto;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.material-symbols-outlined {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.button:hover span:after {
+  opacity: 1;
 }
 
 .button:focus {
@@ -87,47 +86,81 @@ img {
 .button:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
-.title__container {
+
+.button__submit {
+  background-color: #ff4444;
+}
+
+.button__reset {
+  background-color: #26e28a;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.back {
+  margin-right: 0.5em;
+}
+
+.next {
+  margin-left: 0.5em;
+}
+
+/* Home page */
+
+.page__home {
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage__text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  max-width: 700px;
+  text-align: center;
+  margin-bottom: 0.8em;
+}
+
+.container__brand {
+  justify-content: center;
+  align-items: center;
   font-family: "Oswald", sans-serif;
   justify-content: center;
   align-items: center;
   color: #ffcb05;
   font-weight: 1000;
-  font-size: 1.3rem;
+  font-size: 1rem;
   letter-spacing: 4px;
   -webkit-text-stroke: 1.5px #2a75bb;
   text-transform: uppercase;
+  padding: 0;
 }
 
-/* Gamepage  */
-
-/* Header */
+.header__title {
+  line-height: 0.2;
+  margin-bottom: 0.8em;
+}
 
 .container__logo {
   max-width: 300px;
-  margin-right: 2em;
 }
 
 .logo {
   max-width: 100%;
 }
 
-.container__card {
-  display: grid;
-  gap: 1.125rem;
-  grid-template: auto auto / repeat(5, 1fr);
-  margin-bottom: 1.5rem;
-}
+/* Game */
 
-/* Main */
-
+/* Cards */
 .card {
-  justify-content: center;
-}
-
-.card__pokemon {
+  display: inline;
   font-weight: 700;
-  font-size: 1.5rem;
   line-height: 1.5rem;
   text-align: center;
   color: #2b283a;
@@ -138,11 +171,13 @@ img {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  padding: 1em;
+  padding: 0.2em 0.5em;
+  max-width: 200px;
+  margin-bottom: 1em;
 }
 
 .card__image {
-  width: 150px;
+  width: 130px;
   min-height: 200px;
   display: flex;
   align-items: center;
@@ -151,32 +186,66 @@ img {
 
 .pokemon__name {
   text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.container__question {
+  min-height: 550px;
+}
+
+.page__memorize {
+  justify-content: center;
+}
+
+.score--board {
+  margin-left: auto;
+  margin-bottom: 1em;
+}
+
+.question {
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.question > .card {
+  margin-bottom: 1em;
+}
+
+.choice {
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+
+.container__button {
+  display: flex;
+  justify-content: center;
   margin-top: auto;
 }
 
-/* Memorize Page */
-.memorizepage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.button + .button {
+  margin-left: 1em;
+}
+
+.correct--answer {
+  color: #ff6060;
+  font-weight: 700;
 }
 
 /* Pokemon Types */
 
 .card__pokemon--type {
   justify-content: center;
+  margin-bottom: auto;
 }
 
 .pokemon__type {
   margin: 10px;
   padding: 0.25em 0.5em;
   border-radius: 6px;
-  font-size: 13px;
   font-family: "helvetica neue", Helvetica, Verdana, sans-serif;
   color: #fff;
   font-weight: 1000;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   background-color: #68a090;
   border: 3px solid #ffffff;
   text-transform: uppercase;
@@ -251,34 +320,53 @@ img {
   background-color: #7038f8;
 }
 
-/* Start Button */
-/* To be changed */
+/* Media Query */
 
-/* .button {
-  font-family: "Karla";
-  font-weight: 700;
-  font-size: 1.2rem;
-  line-height: 1.1875rem;
-  border: none;
-  border-radius: 6px;
-  padding: 0.5em 1.5em;
-  cursor: pointer;
+@media (min-width: 600px) {
+  .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .container__pokemon {
+    justify-content: center;
+  }
+
+  .header__title {
+    font-size: 2.2rem;
+  }
+
+  .card__pokemon + .card__pokemon {
+    margin-left: 1em;
+  }
+
+  .choices {
+    font-size: 1.2rem;
+    justify-content: center;
+  }
+
+  .choice {
+    margin-bottom: 0;
+  }
+
+  .container__question {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container__button {
+    margin-top: 0;
+  }
+
+  .choice + .choice {
+    margin-left: 0.5em;
+  }
+
+  .pokemon__type {
+    font-size: 1rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+  }
 }
-
-.roll__button {
-  background-color: #5035ff;
-  color: #ffffff;
-}
-
-.new__button {
-  background-color: #fdf257;
-  color: #2b283a;
-}
-
-.button:focus {
-  outline: none;
-}
-
-.button:active {
-  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
-} */
